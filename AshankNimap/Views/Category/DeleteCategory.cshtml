@@ -1,0 +1,28 @@
+﻿@model AshankNimap.Models.Category
+@{
+    ViewBag.Title = "DeleteCategory";
+}
+<h2 style="text-align:center;background-color:gray;color:whitesmoke">Delete Category</h2>
+<br/>
+@using (Html.BeginForm("DeleteCategory", "Category"))
+{
+    <div style="margin-left:520px;">
+        @Html.LabelFor(C => C.CategoryId)<br />
+        @Html.TextBoxFor(C => C.CategoryId, new {@class="form-control", @readonly="true"})
+    </div>
+    <br/>
+    <div style="margin-left:520px;">
+        @Html.LabelFor(C => C.CategoryName)<br />
+        @Html.TextBoxFor(C => C.CategoryName,new {@class="form-control",@readonly="true"})
+    </div>
+    <br/>
+    <div style="margin-left:520px;">
+        <font color="red">Are You sure of deleting the current record?</font>
+    </div>
+    <br/>
+    <div style="margin-left:620px;">
+        <input type="submit" value="Delete" class="btn btn-danger" name="btnSave" />
+    </div>
+}
+<br/>
+@Html.ActionLink("Back to DisplayCategories", "DisplayCategories")

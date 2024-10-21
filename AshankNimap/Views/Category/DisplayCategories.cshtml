@@ -1,0 +1,35 @@
+﻿@model IEnumerable<AshankNimap.Models.Category>
+@{
+    ViewBag.Title = "DisplayCategories";
+}
+
+<h2 style="text-align:center;background-color:gray;color:whitesmoke">Display Categories</h2>
+<br/>
+
+<div style=" margin-left:200px;">
+    @Html.ActionLink("Create Product", "AddProduct","Product", null, new { @class = "btn btn-info" })
+    @Html.ActionLink("Create Category", "AddCategory", "Category", null, new { @class = "btn btn-info", style = "margin-left:570px" })
+</div>
+<br/>
+<br/>
+
+<table style="text-align:center;" class="table table-striped">
+
+    <tr style="background-color:darkgrey;color:antiquewhite">
+        <th>@Html.DisplayNameFor(C => C.CategoryId)</th>
+        <th>@Html.DisplayNameFor(C => C.CategoryName)</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var Category in Model)
+    {
+    <tr>
+            <td>@Html.DisplayFor(C => Category.CategoryId)</td>
+            <td>@Html.DisplayFor(C => Category.CategoryName)</td>
+            <td>
+                @Html.ActionLink("View", "ViewCategory", new { CategoryId = Category.CategoryId }, new { @class = "btn btn-outline-primary" })
+                @Html.ActionLink("Edit", "EditCategory", new { CategoryId = Category.CategoryId }, new { @class = "btn btn-outline-warning" })
+                @Html.ActionLink("Delete", "DeleteCategory", new { CategoryId = Category.CategoryId }, new { @class = "btn btn-outline-danger" })
+            </td>
+    </tr>
+    }
+</table>

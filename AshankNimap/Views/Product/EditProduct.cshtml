@@ -1,0 +1,36 @@
+﻿@model AshankNimap.Models.Product
+@{
+    ViewBag.Title = "EditProduct";
+}
+
+<h2 style="text-align:center;background-color:darkslategray;color:whitesmoke">Edit Product</h2>
+
+<br/>
+@using (Html.BeginForm("EditProduct", "Product"))
+{
+    <div style="margin-left:520px;">
+        @Html.LabelFor(P => P.ProductId)<br />
+        @Html.TextBoxFor(P => P.ProductId,new {@class="form-control" })
+    </div>
+
+    <br/>
+    <div style="margin-left:520px;">
+        @Html.LabelFor(P => P.ProductName)<br />
+        @Html.TextBoxFor(P => P.ProductName, new { @class = "form-control" })
+    </div>
+
+    <br/>
+    <div style="margin-left:520px;">
+        @Html.LabelFor(P => P.Category.CategoryName)<br />
+        @Html.DropDownListFor(P => P.CategoryId, ViewBag.CategoryList as SelectList, " -Select Category-", new { @class = "form-control" })
+    </div>
+
+    <br/>
+    <div style="margin-left:620px;">
+        <input type="submit" value="Save" class="btn btn-primary" name="btnSave" />
+
+    </div>
+}
+<br/>
+
+@Html.ActionLink("Back to DisplayProducts", "DisplayProducts")

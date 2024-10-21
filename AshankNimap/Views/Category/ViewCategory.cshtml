@@ -1,0 +1,32 @@
+﻿@model AshankNimap.Models.Category
+
+@{
+    ViewBag.Title = "ViewCategory";
+}
+
+<h2 style="text-align:center;background-color:gray;color:whitesmoke">View Categories</h2>
+<br/><br/>
+<h5 style="text-align:center;">Display Category</h5>
+<br/>
+<table class="table table-striped" style="margin-left:170px;"> 
+    <tr>
+        <th>
+            CategoryId :
+        </th>
+        <td>
+            @Model.CategoryId
+        </td>
+    </tr>
+
+    <tr>
+        <th>
+            CategoryName :
+        </th>
+        <td>
+            @Model.CategoryName
+        </td>
+    </tr>
+</table>
+
+<br/><br/>
+@Html.ActionLink("Back to DisplayCategories", "DisplayCategories")

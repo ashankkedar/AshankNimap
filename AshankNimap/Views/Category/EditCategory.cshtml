@@ -1,0 +1,24 @@
+﻿@model AshankNimap.Models.Category
+@{
+    ViewBag.Title = "EditCategory";
+}
+<h2 style="text-align:center;background-color:gray;color:whitesmoke">Edit Categories</h2>
+<br/>
+@using (Html.BeginForm("EditCategory", "Category"))
+{
+    <div style="margin-left:500px;">
+        @Html.LabelFor(C=>C.CategoryId)<br/>
+        @Html.TextBoxFor(C=>C.CategoryId,new { @class="form-control",@readonly = "true" })
+    </div>
+    <br/>
+    <div style="margin-left:500px;">
+        @Html.LabelFor(C => C.CategoryName)<br />
+        @Html.TextBoxFor(C => C.CategoryName,new { @class = "form-control" })
+    </div>
+    <br/>
+    <div style="margin-left:600px;">
+        <input type="submit" value="Save"  class="btn btn-primary" name="btnSave" />
+    </div>
+}
+<br/>
+@Html.ActionLink("Back to DisplayCategories", "DisplayCategories")

@@ -1,0 +1,30 @@
+﻿@model AshankNimap.Models.Category
+@{
+    ViewBag.Title = "AddCategory";
+}
+
+<h2 style="text-align:center;background-color:gray;color:whitesmoke">Add Category</h2>
+
+<br /><br />
+
+@using (Html.BeginForm("AddCategory", "Category"))
+{
+    <div style="margin-left:480px;">
+       <span class="fw-bold" style="margin-left:85px;font-size:medium;">
+        @Html.LabelFor(C => C.CategoryName)</span>  <br /><br />
+        @Html.TextBoxFor(C => C.CategoryName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(C => C.CategoryName, "", new { @class = "text-danger" })
+    </div>
+
+    <br />
+
+    <div style="margin-left:525px;">
+        <input type="submit" value="Save" class="btn btn-primary" name="btnSave" />
+        <span style="margin-left:55px;"><input type="reset" value="Reset" class="btn btn-secondary" name="btnReset" /></span>
+    </div>
+}
+
+<br />
+<br />
+
+@Html.ActionLink("Back to DisplayCategories", "DisplayCategories")

@@ -1,0 +1,51 @@
+﻿@model AshankNimap.Models.Product
+@{
+    ViewBag.Title = "ViewProduct";
+}
+
+<h2 style="text-align:center;background-color:darkslategray;color:whitesmoke">View Product</h2>
+<br /><br />
+
+<h5 style="text-align:center;">Display Product</h5>
+<br />
+
+<table class="table table-striped" style="margin-left:170px;">
+    <tr>
+        <td>
+            ProductId :
+        </td>
+        <td>
+            @Model.ProductId
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            ProductName :
+        </td>
+        <td>
+            @Model.ProductName
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            CategoryId :
+        </td>
+        <td>
+            @Model.CategoryId
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            CategoryName :
+        </td>
+        <td>
+            @Model.Category.CategoryName
+        </td>
+    </tr>
+</table>
+<br/>
+
+@Html.ActionLink("Back to DisplayProduct", "DisplayProducts")
